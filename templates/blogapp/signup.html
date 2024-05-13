@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{%extends 'blogapp/base.html'%}
+{%load static%}
+{%block bodyblock%}
+<link rel="stylesheet" href="{% static 'blogapp/login.css' %}">
+<h1>Sign Up</h1>
+<form method="post">
+    {{form.as_p}}
+    {%csrf_token%}
+    <input type='submit' value="Sign Up">
+</form>
+{%endblock%}

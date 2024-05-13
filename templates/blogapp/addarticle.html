@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{%extends 'blogapp/base.html'%}
+{%load static%}
+{%block bodyblock%}
+<link rel="stylesheet" href="{% static 'blogapp/addarticle.css' %}">
+<div class="add">
+<h2>Submit Article</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+</div>
+{%endblock%}

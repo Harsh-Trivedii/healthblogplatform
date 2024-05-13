@@ -1,0 +1,46 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2; /* Light background color */
+    color: #333; /* Dark text color */
+}
+
+h1 {
+    color: #3498db; /* Highlight color for the heading */
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form input[type="submit"] {
+    background-color: #3498db; /* Submit button background color */
+    color: #fff; /* Submit button text color */
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #2186c4; /* Darker color on hover */
+}

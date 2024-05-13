@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{%extends 'blogapp/base.html'%}
+{%load static%}
+{%block bodyblock%}
+<link rel="stylesheet" href="{% static 'blogapp/articlelist.css' %}">
+<h2>Articles</h2>
+<ul>
+    {% for article in articles %}
+    <li><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a></li>
+    {% endfor %}
+{%endblock%}

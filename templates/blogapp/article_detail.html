@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{%extends 'blogapp/base.html'%}
+{%load static%}
+{%block titleblock%}    <title>{{ article.title }}</title> {%endblock%}
+{%block bodyblock%}
+<link rel="stylesheet" href="{% static 'blogapp/articledetail.css' %}">
+<div class="detail">
+<h2>{{ article.title }}</h2>
+<p>{{ article.content }}</p>
+<p>Author: {{ article.author }}</p>
+
+<h3>Comments</h3>
+<ul>
+    {% for comment in comments %}
+    <li>{{ comment.content }} - {{ comment.user.username }}</li>
+    {% endfor %}
+</ul>
+
+{% if user.is_authenticated %}
+<form method="post">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <button type="submit">Add Comment</button>
+</form>
+{% else %}
+<p>Please <a href="{% url '/accounts/login/' %}">login</a> to add a comment.</p>
+</div>
+{% endif %}
+{%endblock%}

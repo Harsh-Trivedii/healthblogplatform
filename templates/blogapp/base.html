@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEALTH BLOG PLATFORM</title>
+    <link rel="stylesheet" href="{%static 'blogapp/base.css'%}">
+    {%block titleblock%} {%endblock%}
+</head>
+<body>
+    <header>
+        <h1>Health Blog Page</h1>
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'addarticle' %}">ADD ARTICLES</a></li>
+                <li><a href="{% url 'viewarticles' %}">VIEW ARTICLES</a></li>
+                {% if user.is_authenticated %}
+                <!-- Display logout option if the user is authenticated -->
+                <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+                {% else %}
+                <!-- Display signup and login options if the user is not authenticated -->
+                <li><a href="{% url 'signup' %}">SIGNUP</a></li>
+                <li><a href="/accounts/login/">LOGIN</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </header>
+
+    <div class="content">
+        {% block bodyblock %}{% endblock %}
+    </div>
+
+</body>
+</html>

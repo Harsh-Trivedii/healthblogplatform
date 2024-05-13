@@ -1,0 +1,27 @@
+.add{
+    margin:auto;
+    text-align: center;
+    border: 2px solid #2980b9;
+    width:500px;
+    margin-top: 10px;
+}
+h2 {
+    color: #2c3e50;
+}
+
+form {
+    margin-top: 20px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1f669a;
+}
